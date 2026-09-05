@@ -449,11 +449,12 @@ export const Component = () => {
     if (titleRef.current) {
       const titleChars =
         titleRef.current.querySelectorAll(".title-char");
-      tl.from(
+      gsap.set(titleChars, { y: 200, opacity: 0 });
+      tl.to(
         titleChars,
         {
-          y: 200,
-          opacity: 0,
+          y: 0,
+          opacity: 1,
           duration: 1.5,
           stagger: 0.05,
           ease: "power4.out",
@@ -465,11 +466,12 @@ export const Component = () => {
     if (subtitleRef.current) {
       const subtitleLines =
         subtitleRef.current.querySelectorAll(".subtitle-line");
-      tl.from(
+      gsap.set(subtitleLines, { y: 50, opacity: 0 });
+      tl.to(
         subtitleLines,
         {
-          y: 50,
-          opacity: 0,
+          y: 0,
+          opacity: 1,
           duration: 1,
           stagger: 0.2,
           ease: "power3.out",
@@ -479,11 +481,12 @@ export const Component = () => {
     }
 
     if (scrollProgressRef.current) {
-      tl.from(
+      gsap.set(scrollProgressRef.current, { opacity: 0, y: 50 });
+      tl.to(
         scrollProgressRef.current,
         {
-          opacity: 0,
-          y: 50,
+          opacity: 1,
+          y: 0,
           duration: 1,
           ease: "power2.out",
         },
